@@ -1,0 +1,130 @@
+{
+    "author": "Niall Bourke",
+    "cite": "Uus, A., Grigorescu, I., van Poppel, M., Steinweg, J. K., Roberts, T., Rutherford, M., Hajnal, J., Lloyd, D., Pushparajah, K. & Deprez, M. (2022) Automated 3D reconstruction of the fetal thorax in the standard atlas space from motion-corrupted MRI stacks for 21-36 weeks GA range. Medical Image Analysis, 80 (August 2022).: https://doi.org/10.1016/j.media.2022.102484",
+    "command": "python3 /flywheel/v0/run.py",
+    "config": {
+        "debug": {
+            "default": false,
+            "description": "Log debug messages",
+            "type": "boolean"
+        },
+        "motion": {
+            "default": 0,
+            "description": "motion correction mode: (0 or 1): 0 - minor, 1 - >180 degree rotations / default: 0",
+            "maximum": 180,
+            "minimum": 0,
+            "type": "integer"
+        },
+        "sliceThickness": {
+            "default": 5.5,
+            "description": "slice thickness / default: 2.5",
+            "maximum": 7,
+            "minimum": 1,
+            "type": "number"
+        },
+        "resolution": {
+            "default": 0.8,
+            "description": "output recon resolution / default: 0.8",
+            "maximum": 3,
+            "minimum": 0.8,
+            "type": "number"
+        },
+        "packages": {
+            "default": 4,
+            "description": "number of packages / default: 4 for 1.25 spacing, 1 for the rest",
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer"
+        },
+        "verbose": {
+            "default": "v",
+            "description": "increases log verbosity for each occurrence, debug level is -vvv",
+            "enum": [
+                "",
+                "v",
+                "vv",
+                "vvv"
+            ],
+            "type": "string"
+        }
+    },
+    "custom": {
+        "analysis-level": "participant",
+        "flywheel": {
+            "classification": {
+                "components": [
+                    "SVRTK"
+                ],
+                "keywords": [
+                    "segmentation",
+                    "volume",
+                    "template"
+                ],
+                "modality": [
+                    "MR"
+                ],
+                "type": [
+                    "nifti"
+                ]
+            },
+            "suite": "UNITY Apps"
+        },
+        "gear-builder": {
+            "category": "analysis",
+            "image": "flywheel/svrtk-brain-reconstruction:0.0.1"
+        },
+        "kcl-app-binary": "app/main.sh",
+        "kcl-app-modalities": [
+            "anat"
+        ],
+        "license": {
+            "main": {
+                "name": "",
+                "url": ""
+            },
+            "non-commercial-use-only": false
+        }
+    },
+    "description": "The mirtk reconstruct tool performs SVR (slice to volume reconstruction) of 3D high-resolution images of the fetal brain from motion-corrupted low-resolution stacks of 2D MRI slices. These output 3D images can be reoriented in any plane for diagnosis and suitable for 3D segmentation",
+    "environment": {
+        "CONDA_DIR": "/opt/conda",
+        "FLYWHEEL": "/flywheel/v0",
+        "GPG_KEY": "E3FF2839C048B25C084DEBE9B26995E310250568",
+        "LANG": "C.UTF-8",
+        "PATH": "/home:/home:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "PYTHON_GET_PIP_SHA256": "fa6f3fb93cce234cd4e8dd2beb54a51ab9c247653b52855a48dd44e6b21ff28b",
+        "PYTHON_GET_PIP_URL": "https://github.com/pypa/get-pip/raw/c20b0cfd643cd4a19246ccf204e2997af70f6b21/public/get-pip.py",
+        "PYTHON_PIP_VERSION": "21.2.3",
+        "PYTHON_VERSION": "3.8.11",
+        "container": "oci",
+        "TOOLS": "/home/"
+    },
+    "inputs": {
+        "api-key": {
+            "base": "api-key",
+            "read-only": true
+        },
+        "axi": {
+            "base": "file",
+            "optional": false,
+            "description": "Axial plane acquisition"
+        },
+        "cor": {
+            "base": "file",
+            "description": "Coronal plane acquisition",
+            "optional": true
+        },
+        "sag": {
+            "base": "file",
+            "description": "Sagital plane acquisition",
+            "optional": true
+        }
+    },
+    "label": "svrtk-brain-reconstruction",
+    "license": "MIT",
+    "maintainer": "Niall Bourke <niall.bourke@kcl.ac.uk>",
+    "name": "svrtk-brain-reconstruction",
+    "source": "https://github.com/SVRTK/SVRTK",
+    "url": "https://github.com/SVRTK/SVRTK",
+    "version": "0.0.1"
+}
