@@ -13,16 +13,11 @@ COPY ./ $FLYWHEEL/
 # Dev dependencies (conda, jq, poetry, flywheel installed in base)
 RUN apt-get update && \
     apt-get clean && \
-    pip install flywheel-gear-toolkit && \
-    pip install flywheel-sdk && \
+    pip3 install flywheel-gear-toolkit && \
+    pip3 install flywheel_gear_toolkit && \
+    pip3 install flywheel-sdk && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Installing main dependencies
-# FSL (add additional dep here)
-# SVRTK developed in home directory, so need to source this as working in /flywheel/v0
-# set SVRTKDIR so SVRTK tools can use it, in this minimal case, the SVRTKDIR will be the root/home/ directory
-ENV PATH="/home:${PATH}"
-# ENV FSLDIR="/opt/conda"
 
 # Configure entrypoint
 RUN bash -c 'chmod +rx $FLYWHEEL/run.py' && \

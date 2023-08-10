@@ -2,7 +2,7 @@
 
 **UNDER DEVELOPMENT**
 
-Wrapping slice to volume reconstruction toolkit as a gear on Flywheel
+Wrapper for Flywheel gear: slice to volume reconstruction toolkit 
 
 Source:
 https://github.com/SVRTK/SVRTK
@@ -23,6 +23,8 @@ https://github.com/SVRTK/SVRTK
 **url:** <https://gitlab.com/flywheel-io/flywheel-apps/>
 
 **cite:**  
+Uus, A., Grigorescu, I., van Poppel, M., Steinweg, J. K., Roberts, T., Rutherford, M., Hajnal, J., Lloyd, D., Pushparajah, K. & Deprez, M. (2022) Automated 3D reconstruction of the fetal thorax in the standard atlas space from motion-corrupted MRI stacks for 21-36 weeks GA range. Medical Image Analysis, 80 (August 2022).: https://doi.org/10.1016/j.media.2022.102484
+
 Kuklisova-Murgasova, M., Quaghebeur, G., Rutherford, M. A., Hajnal, J. V., & Schnabel, J. A. (2012). Reconstruction of fetal brain MRI with intensity matching and complete outlier removal. Medical Image Analysis, 16(8), 1550–1564.: https://doi.org/10.1016/j.media.2012.07.004
 
 ### Classification
@@ -58,29 +60,15 @@ Kuklisova-Murgasova, M., Quaghebeur, G., Rutherford, M. A., Hajnal, J. V., & Sch
 
 * input
   * **Base**: file
-  * **Description**: input file (usually isotropic reconstruction)
+  * **Description**: input file 
   * **Optional**: false
 
 ### Outputs
 * output
   * **Base**: file
-  * **Description**: segmentated file 
+  * **Description**: file 
   * **Optional**: false
 
-* parcelation
-  * **Base**: file
-  * **Description**: parcelation file 
-  * **Optional**: true
-
-* vol
-  * **Base**: file
-  * **Description**: volume estimation file (csv)
-  * **Optional**: true
-
-* QC
-  * **Base**: file
-  * **Description**: QC file (csv)
-  * **Optional**: true
 
 
 #### Metadata
@@ -135,7 +123,7 @@ A picture and description of the workflow
     FC((file-classifier)):::gear --> D2N;
     D2N((dcm2niix)):::gear --> CB;
     CB((curate-bids)):::gear --> CISO;
-    CISO((ciso)):::gear --> SS;
+    svrtk((svrtk)):::gear --> SS;
     SS((synthseg)):::gear --> ANA;
     ANA[Analysis]:::container;
     
@@ -154,9 +142,8 @@ Description of workflow
    4. MRIQC (optional)
    5. curate bids
 3. Select either a subject or a session.
-4. Run the ciso gear (Hyperfine triplane aquisitions)
-5. Run the synthseg gear
-6. Gear places output in Analysis
+4. Run the svrtk-brain-reconstruction gear
+5. Gear places output in Analysis
 
 ### Use Cases
 

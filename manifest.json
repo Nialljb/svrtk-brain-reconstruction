@@ -3,11 +3,6 @@
     "cite": "Uus, A., Grigorescu, I., van Poppel, M., Steinweg, J. K., Roberts, T., Rutherford, M., Hajnal, J., Lloyd, D., Pushparajah, K. & Deprez, M. (2022) Automated 3D reconstruction of the fetal thorax in the standard atlas space from motion-corrupted MRI stacks for 21-36 weeks GA range. Medical Image Analysis, 80 (August 2022).: https://doi.org/10.1016/j.media.2022.102484",
     "command": "python3 /flywheel/v0/run.py",
     "config": {
-        "debug": {
-            "default": false,
-            "description": "Log debug messages",
-            "type": "boolean"
-        },
         "motion": {
             "default": 0,
             "description": "motion correction mode: (0 or 1): 0 - minor, 1 - >180 degree rotations / default: 0",
@@ -35,17 +30,6 @@
             "maximum": 5,
             "minimum": 1,
             "type": "integer"
-        },
-        "verbose": {
-            "default": "v",
-            "description": "increases log verbosity for each occurrence, debug level is -vvv",
-            "enum": [
-                "",
-                "v",
-                "vv",
-                "vvv"
-            ],
-            "type": "string"
         }
     },
     "custom": {
@@ -71,7 +55,7 @@
         },
         "gear-builder": {
             "category": "analysis",
-            "image": "flywheel/svrtk-brain-reconstruction:0.0.1"
+            "image": "flywheel/svrtk-brain-reconstruction:0.0.3"
         },
         "kcl-app-binary": "app/main.sh",
         "kcl-app-modalities": [
@@ -91,7 +75,7 @@
         "FLYWHEEL": "/flywheel/v0",
         "GPG_KEY": "E3FF2839C048B25C084DEBE9B26995E310250568",
         "LANG": "C.UTF-8",
-        "PATH": "/home:/home:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "PATH": "/home:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         "PYTHON_GET_PIP_SHA256": "fa6f3fb93cce234cd4e8dd2beb54a51ab9c247653b52855a48dd44e6b21ff28b",
         "PYTHON_GET_PIP_URL": "https://github.com/pypa/get-pip/raw/c20b0cfd643cd4a19246ccf204e2997af70f6b21/public/get-pip.py",
         "PYTHON_PIP_VERSION": "21.2.3",
@@ -107,7 +91,7 @@
         "axi": {
             "base": "file",
             "optional": false,
-            "description": "Axial plane acquisition"
+            "description": "Axial plane acquisition (Not strictly required to be axial, but at least one input is required)"
         },
         "cor": {
             "base": "file",
@@ -126,5 +110,5 @@
     "name": "svrtk-brain-reconstruction",
     "source": "https://github.com/SVRTK/SVRTK",
     "url": "https://github.com/SVRTK/SVRTK",
-    "version": "0.0.1"
+    "version": "0.0.3"
 }

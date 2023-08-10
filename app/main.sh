@@ -13,6 +13,8 @@ INPUT_DIR=$FLYWHEEL_BASE/input/
 OUTPUT_DIR=$FLYWHEEL_BASE/output
 CONFIG_FILE=$FLYWHEEL_BASE/config.json
 CONTAINER='[flywheel/svrtk-brain-reconstruction]'
+WORK=/flywheel/v0/work
+mkdir -p ${WORK}
 
 ##############################################################################
 # Parse configuration
@@ -55,11 +57,11 @@ sag_input_file=`find $INPUT_DIR/sag -iname '*.nii' -o -iname '*.nii.gz'`
 # Check that input file exists
 if [[ -e $axi_input_file ]] && [[ -e $cor_input_file ]] && [[ -e $sag_input_file ]]; then
     echo "${CONTAINER}  Input file found: ${axi_input_file}"
-    cp ${axi_input_file} ${work}/T2w_AXI.nii.gz
+    cp ${axi_input_file} ${WORK}/T2w_AXI.nii.gz
     echo "${CONTAINER}  Input file found: ${cor_input_file}"
-    cp ${cor_input_file} ${work}/T2w_COR.nii.gz 
+    cp ${cor_input_file} ${WORK}/T2w_COR.nii.gz 
     echo "${CONTAINER}  Input file found: ${sag_input_file}"
-    cp ${sag_input_file} ${work}/T2w_SAG.nii.gz
+    cp ${sag_input_file} ${WORK}/T2w_SAG.nii.gz
 else
     echo "${CONTAINER} WARNING: Missing one or more Nifti inputs within input directory $INPUT_DIR"
 #   echo "${CONTAINER} Exiting..."
@@ -67,15 +69,15 @@ else
 fi
 
 
-if [ "$(ls -A $work)" ]; then   
-    echo "work directory contents:"
-    echo "$(ls -l $work)"
+if [ "$(ls -A $WORK)" ]; then   
+    echo "WORK directory contents:"
+    echo "$(ls -l $WORK)"
 
     echo "Running brain-reconstruction..."
-    bash /home/auto-proc-svrtk/auto-brain-reconstruction.sh $work $OUTPUT_DIR $config_motion $config_slice $config_res $config_packages
+    bash /home/auto-proc-svrtk/auto-brain-reconstruction.sh $WORK $OUTPUT_DIR $config_motion $config_slice $config_res $config_packages
     mri_svrtk_exit_status=$?
 else
-    echo "work directory is empty"
+    echo "WORK directory is empty"
     echo "Exiting..."
     mri_svrtk_exit_status=$?
 fi
