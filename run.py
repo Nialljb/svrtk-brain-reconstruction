@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 """The run script."""
 import logging
-import os
 
 # import flywheel functions
 from flywheel_gear_toolkit import GearToolkitContext
-from app.parser import parse_config
 from app.command_line import exec_command
 
 # The gear is split up into 2 main components. The run.py file which is executed
@@ -15,17 +13,13 @@ from app.command_line import exec_command
 log = logging.getLogger(__name__)
 
 def main(context: GearToolkitContext) -> None:
-    """Parses config and runs."""
-    gear_inputs, gear_options, app_options = parse_config(context)
     
     command = "/flywheel/v0/app/main.sh"
-    # os.system(command)
 
     print(command)
     #This is what it is all about
     exec_command(
     command,
-    #dry_run=gear_options["dry-run"],
     shell=True,
     cont_output=True,
         )

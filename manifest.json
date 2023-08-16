@@ -55,7 +55,7 @@
         },
         "gear-builder": {
             "category": "analysis",
-            "image": "flywheel/svrtk-brain-reconstruction:0.0.3"
+            "image": "flywheel/svrtk-brain-reconstruction:0.1.2"
         },
         "kcl-app-binary": "app/main.sh",
         "kcl-app-modalities": [
@@ -69,19 +69,20 @@
             "non-commercial-use-only": false
         }
     },
-    "description": "The mirtk reconstruct tool performs SVR (slice to volume reconstruction) of 3D high-resolution images of the fetal brain from motion-corrupted low-resolution stacks of 2D MRI slices. These output 3D images can be reoriented in any plane for diagnosis and suitable for 3D segmentation",
+    "description": "(UNDER DEVELOPMENT) - The mirtk reconstruct tool performs SVR (slice to volume reconstruction) of 3D high-resolution images of the fetal brain from motion-corrupted low-resolution stacks of 2D MRI slices. These output 3D images can be reoriented in any plane for diagnosis and suitable for 3D segmentation",
     "environment": {
         "CONDA_DIR": "/opt/conda",
         "FLYWHEEL": "/flywheel/v0",
         "GPG_KEY": "E3FF2839C048B25C084DEBE9B26995E310250568",
         "LANG": "C.UTF-8",
-        "PATH": "/home:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "PATH": "/root/miniconda3/bin/:/home:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         "PYTHON_GET_PIP_SHA256": "fa6f3fb93cce234cd4e8dd2beb54a51ab9c247653b52855a48dd44e6b21ff28b",
         "PYTHON_GET_PIP_URL": "https://github.com/pypa/get-pip/raw/c20b0cfd643cd4a19246ccf204e2997af70f6b21/public/get-pip.py",
         "PYTHON_PIP_VERSION": "21.2.3",
         "PYTHON_VERSION": "3.8.11",
         "container": "oci",
-        "TOOLS": "/home/"
+        "TOOLS": "/home/",
+        "PYTHONPATH": "/root:"
     },
     "inputs": {
         "api-key": {
@@ -110,5 +111,5 @@
     "name": "svrtk-brain-reconstruction",
     "source": "https://github.com/SVRTK/SVRTK",
     "url": "https://github.com/SVRTK/SVRTK",
-    "version": "0.0.3"
+    "version": "0.1.2"
 }

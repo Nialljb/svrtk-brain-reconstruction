@@ -1,0 +1,503 @@
+{
+    "config": {
+        "motion": 0,
+        "sliceThickness": 5.5,
+        "resolution": 0.8,
+        "packages": 4
+    },
+    "inputs": {
+        "axi": {
+            "hierarchy": {
+                "id": "64aea96593326c98084475e5",
+                "type": "acquisition"
+            },
+            "object": {
+                "type": "nifti",
+                "mimetype": "application/octet-stream",
+                "modality": "MR",
+                "classification": {
+                    "Intent": [
+                        "Structural"
+                    ],
+                    "Measurement": [
+                        "T2"
+                    ]
+                },
+                "tags": [],
+                "info": {
+                    "AcquisitionMatrix": [
+                        0,
+                        448,
+                        325,
+                        0
+                    ],
+                    "AcquisitionMatrixPE": 325,
+                    "AcquisitionNumber": 1,
+                    "AcquisitionTime": "16:59:47.335000",
+                    "BaseResolution": 448,
+                    "BodyPartExamined": "HEAD",
+                    "CoilCombinationMethod": "Adaptive Combine",
+                    "Columns": 406,
+                    "ConsistencyInfo": "000",
+                    "ConversionSoftware": "dcm2niix",
+                    "ConversionSoftwareVersion": "v1.0.20211006",
+                    "DeviceSerialNumber": "181604",
+                    "DwellTime": 5.8e-06,
+                    "EchoTime": 0.095,
+                    "EchoTrainLength": 15,
+                    "FlipAngle": 150,
+                    "ImageOrientationPatientDICOM": [
+                        0.989982,
+                        0.140137,
+                        0.0172161,
+                        -0.139838,
+                        0.956344,
+                        0.256616
+                    ],
+                    "ImageOrientationText": "Tra>Cor(14.9)>Sag(-1.1)",
+                    "ImageType": [
+                        "ORIGINAL",
+                        "PRIMARY",
+                        "M",
+                        "ND",
+                        "NORM",
+                        "FS5",
+                        "5",
+                        "FIL"
+                    ],
+                    "ImagingFrequency": 63.6353,
+                    "InPlanePhaseEncodingDirection": "ROW",
+                    "InPlanePhaseEncodingDirectionDICOM": "ROW",
+                    "InstitutionAddress": "NSAMBYA StreetNo,KAMPALA,KAMPALA,UG,256",
+                    "InstitutionName": "ST FRANCIS HOSPITAL NSAMBYA",
+                    "InstitutionalDepartmentName": "Department",
+                    "MRAcquisitionType": "2D",
+                    "MagneticFieldStrength": 1.5,
+                    "Manufacturer": "Siemens",
+                    "ManufacturersModelName": "Sempra",
+                    "MatrixCoilMode": "SENSE",
+                    "Modality": "MR",
+                    "PartialFourier": 1,
+                    "PatientPosition": "HFS",
+                    "PercentPhaseFOV": 90.625,
+                    "PercentPhaseFieldOfView": 90.625,
+                    "PercentSampling": 80,
+                    "PhaseEncodingDirection": "i",
+                    "PhaseEncodingSteps": 330,
+                    "PhaseResolution": 0.8,
+                    "PixelBandwidth": 190,
+                    "PixelSpacing": [
+                        0.51339286565781,
+                        0.51339286565781
+                    ],
+                    "ProcedureStepDescription": "head^10-min exam",
+                    "ProtocolName": "t2_tse_tra",
+                    "PulseSequenceDetails": "%SiemensSeq%\\tse",
+                    "ReceiveCoilActiveElements": "HL;HU;NL;NU",
+                    "ReceiveCoilName": "HeadNeck_10",
+                    "ReconMatrixPE": 406,
+                    "RepetitionTime": 5,
+                    "Rows": 448,
+                    "SAR": 1.17613,
+                    "ScanningSequence": "SE",
+                    "SequenceName": "*tseR2d1_15",
+                    "SequenceVariant": "SK\\SP\\OSP",
+                    "SeriesDescription": "t2_tse_tra",
+                    "SeriesNumber": 6,
+                    "ShimSetting": [
+                        4232,
+                        -3386,
+                        -23011,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "SliceThickness": 3.5,
+                    "SliceTiming": [
+                        2.5,
+                        0,
+                        2.6875,
+                        0.1875,
+                        2.85938,
+                        0.35938,
+                        3.04688,
+                        0.54688,
+                        3.21875,
+                        0.71875,
+                        3.40625,
+                        0.90625,
+                        3.57812,
+                        1.07812,
+                        3.75,
+                        1.25,
+                        3.9375,
+                        1.4375,
+                        4.10938,
+                        1.60938,
+                        4.29688,
+                        1.79688,
+                        4.46875,
+                        1.96875,
+                        4.65625,
+                        2.15625,
+                        4.82812,
+                        2.32812
+                    ],
+                    "SoftwareVersions": "syngo MR E11",
+                    "SpacingBetweenSlices": 4.55,
+                    "SpoilingState": true,
+                    "StationName": "AWP181604",
+                    "TxRefAmp": 286.722
+                },
+                "size": 4518094,
+                "zip_member_count": null,
+                "version": 1,
+                "file_id": "64beb94d655fa84b8d8508dd",
+                "origin": {
+                    "type": "job",
+                    "id": "64beb82522539ce3f11ccb63"
+                }
+            },
+            "location": {
+                "path": "/flywheel/v0/input/axi/6_t2_tse_tra.nii.gz",
+                "name": "6_t2_tse_tra.nii.gz"
+            },
+            "base": "file"
+        },
+        "cor": {
+            "hierarchy": {
+                "id": "64aea96693326c98084475e6",
+                "type": "acquisition"
+            },
+            "object": {
+                "type": "nifti",
+                "mimetype": "application/octet-stream",
+                "modality": "MR",
+                "classification": {
+                    "Intent": [
+                        "Structural"
+                    ],
+                    "Measurement": [
+                        "T2"
+                    ]
+                },
+                "tags": [],
+                "info": {
+                    "AcquisitionMatrix": [
+                        0,
+                        320,
+                        240,
+                        0
+                    ],
+                    "AcquisitionMatrixPE": 240,
+                    "AcquisitionNumber": 1,
+                    "AcquisitionTime": "17:03:42.877500",
+                    "BaseResolution": 320,
+                    "BodyPartExamined": "HEAD",
+                    "CoilCombinationMethod": "Adaptive Combine",
+                    "Columns": 320,
+                    "ConsistencyInfo": "000",
+                    "ConversionSoftware": "dcm2niix",
+                    "ConversionSoftwareVersion": "v1.0.20211006",
+                    "DeviceSerialNumber": "181604",
+                    "DwellTime": 8.1e-06,
+                    "EchoTime": 0.098,
+                    "EchoTrainLength": 15,
+                    "FlipAngle": 150,
+                    "ImageOrientationPatientDICOM": [
+                        0.989978,
+                        0.140171,
+                        0.0172053,
+                        -0.0195159,
+                        0.25645,
+                        -0.96636
+                    ],
+                    "ImageOrientationText": "Cor>Tra(-15.0)>Sag(8.0)",
+                    "ImageType": [
+                        "ORIGINAL",
+                        "PRIMARY",
+                        "M",
+                        "ND",
+                        "NORM",
+                        "FS5",
+                        "5",
+                        "FIL"
+                    ],
+                    "ImagingFrequency": 63.6353,
+                    "InPlanePhaseEncodingDirection": "ROW",
+                    "InPlanePhaseEncodingDirectionDICOM": "ROW",
+                    "InstitutionAddress": "NSAMBYA StreetNo,KAMPALA,KAMPALA,UG,256",
+                    "InstitutionName": "ST FRANCIS HOSPITAL NSAMBYA",
+                    "InstitutionalDepartmentName": "Department",
+                    "MRAcquisitionType": "2D",
+                    "MagneticFieldStrength": 1.5,
+                    "Manufacturer": "Siemens",
+                    "ManufacturersModelName": "Sempra",
+                    "MatrixCoilMode": "SENSE",
+                    "Modality": "MR",
+                    "NumberOfAverages": 2,
+                    "PartialFourier": 1,
+                    "PatientPosition": "HFS",
+                    "PercentPhaseFOV": 100,
+                    "PercentPhaseFieldOfView": 100,
+                    "PercentSampling": 75,
+                    "PhaseEncodingDirection": "i",
+                    "PhaseEncodingSteps": 240,
+                    "PhaseResolution": 0.75,
+                    "PixelBandwidth": 195,
+                    "PixelSpacing": [
+                        0.625,
+                        0.625
+                    ],
+                    "ProcedureStepDescription": "head^10-min exam",
+                    "ProtocolName": "t2_tse_cor",
+                    "PulseSequenceDetails": "%SiemensSeq%\\tse",
+                    "ReceiveCoilActiveElements": "HL;HU;NL;NU",
+                    "ReceiveCoilName": "HeadNeck_10",
+                    "ReconMatrixPE": 320,
+                    "RepetitionTime": 5.52,
+                    "Rows": 320,
+                    "SAR": 1.1067,
+                    "ScanningSequence": "SE",
+                    "SequenceName": "*tse2d1_15",
+                    "SequenceVariant": "SK\\SP",
+                    "SeriesDescription": "t2_tse_cor",
+                    "SeriesNumber": 8,
+                    "ShimSetting": [
+                        4232,
+                        -3386,
+                        -23011,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "SliceThickness": 3.5,
+                    "SliceTiming": [
+                        2.75,
+                        0,
+                        2.92188,
+                        0.17188,
+                        3.09375,
+                        0.34375,
+                        3.26562,
+                        0.51562,
+                        3.4375,
+                        0.6875,
+                        3.60938,
+                        0.85938,
+                        3.78125,
+                        1.03125,
+                        3.95312,
+                        1.20312,
+                        4.125,
+                        1.375,
+                        4.3125,
+                        1.54688,
+                        4.48438,
+                        1.71875,
+                        4.65625,
+                        1.89062,
+                        4.82812,
+                        2.0625,
+                        5,
+                        2.23438,
+                        5.17188,
+                        2.40625,
+                        5.34375,
+                        2.57812
+                    ],
+                    "SoftwareVersions": "syngo MR E11",
+                    "SpacingBetweenSlices": 4.55,
+                    "SpoilingState": true,
+                    "StationName": "AWP181604",
+                    "TxRefAmp": 286.722
+                },
+                "size": 2937667,
+                "zip_member_count": null,
+                "version": 1,
+                "file_id": "64beb94922539ce3f11ccdce",
+                "origin": {
+                    "type": "job",
+                    "id": "64beb82622539ce3f11ccb66"
+                }
+            },
+            "location": {
+                "path": "/flywheel/v0/input/cor/8_t2_tse_cor.nii.gz",
+                "name": "8_t2_tse_cor.nii.gz"
+            },
+            "base": "file"
+        },
+        "sag": {
+            "hierarchy": {
+                "id": "64aea9666eaa0790b6e50b60",
+                "type": "acquisition"
+            },
+            "object": {
+                "type": "nifti",
+                "mimetype": "application/octet-stream",
+                "modality": "MR",
+                "classification": {
+                    "Intent": [
+                        "Structural"
+                    ],
+                    "Measurement": [
+                        "T2"
+                    ]
+                },
+                "tags": [],
+                "info": {
+                    "AcquisitionMatrix": [
+                        0,
+                        448,
+                        325,
+                        0
+                    ],
+                    "AcquisitionMatrixPE": 325,
+                    "AcquisitionNumber": 1,
+                    "AcquisitionTime": "17:06:47.627500",
+                    "BaseResolution": 448,
+                    "BodyPartExamined": "HEAD",
+                    "CoilCombinationMethod": "Adaptive Combine",
+                    "Columns": 406,
+                    "ConsistencyInfo": "000",
+                    "ConversionSoftware": "dcm2niix",
+                    "ConversionSoftwareVersion": "v1.0.20211006",
+                    "DeviceSerialNumber": "181604",
+                    "DwellTime": 5.8e-06,
+                    "EchoTime": 0.095,
+                    "EchoTrainLength": 15,
+                    "FlipAngle": 150,
+                    "ImageOrientationPatientDICOM": [
+                        -0.131184,
+                        0.991358,
+                        2.97148e-08,
+                        0.0346766,
+                        0.00458871,
+                        -0.999388
+                    ],
+                    "ImageOrientationText": "Sag>Cor(-7.5)>Tra(-2.0)",
+                    "ImageType": [
+                        "ORIGINAL",
+                        "PRIMARY",
+                        "M",
+                        "ND",
+                        "NORM",
+                        "FS5",
+                        "5",
+                        "FIL"
+                    ],
+                    "ImagingFrequency": 63.6353,
+                    "InPlanePhaseEncodingDirection": "ROW",
+                    "InPlanePhaseEncodingDirectionDICOM": "ROW",
+                    "InstitutionAddress": "NSAMBYA StreetNo,KAMPALA,KAMPALA,UG,256",
+                    "InstitutionName": "ST FRANCIS HOSPITAL NSAMBYA",
+                    "InstitutionalDepartmentName": "Department",
+                    "MRAcquisitionType": "2D",
+                    "MagneticFieldStrength": 1.5,
+                    "Manufacturer": "Siemens",
+                    "ManufacturersModelName": "Sempra",
+                    "MatrixCoilMode": "SENSE",
+                    "Modality": "MR",
+                    "PartialFourier": 1,
+                    "PatientPosition": "HFS",
+                    "PercentPhaseFOV": 90.625,
+                    "PercentPhaseFieldOfView": 90.625,
+                    "PercentSampling": 80,
+                    "PhaseEncodingDirection": "i",
+                    "PhaseEncodingSteps": 330,
+                    "PhaseResolution": 0.8,
+                    "PixelBandwidth": 190,
+                    "PixelSpacing": [
+                        0.51339286565781,
+                        0.51339286565781
+                    ],
+                    "ProcedureStepDescription": "head^10-min exam",
+                    "ProtocolName": "t2_tse_sag",
+                    "PulseSequenceDetails": "%SiemensSeq%\\tse",
+                    "ReceiveCoilActiveElements": "HL;HU;NL;NU",
+                    "ReceiveCoilName": "HeadNeck_10",
+                    "ReconMatrixPE": 406,
+                    "RepetitionTime": 5,
+                    "Rows": 448,
+                    "SAR": 1.17613,
+                    "ScanningSequence": "SE",
+                    "SequenceName": "*tseR2d1_15",
+                    "SequenceVariant": "SK\\SP\\OSP",
+                    "SeriesDescription": "t2_tse_sag",
+                    "SeriesNumber": 9,
+                    "ShimSetting": [
+                        4232,
+                        -3386,
+                        -23011,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "SliceThickness": 3.5,
+                    "SliceTiming": [
+                        2.5,
+                        0,
+                        2.6875,
+                        0.1875,
+                        2.85938,
+                        0.35938,
+                        3.03125,
+                        0.53125,
+                        3.21875,
+                        0.71875,
+                        3.39062,
+                        0.89062,
+                        3.57812,
+                        1.07812,
+                        3.75,
+                        1.25,
+                        3.9375,
+                        1.4375,
+                        4.10938,
+                        1.60938,
+                        4.28125,
+                        1.78125,
+                        4.46875,
+                        1.96875,
+                        4.64062,
+                        2.14062,
+                        4.82812,
+                        2.32812
+                    ],
+                    "SoftwareVersions": "syngo MR E11",
+                    "SpacingBetweenSlices": 4.55,
+                    "SpoilingState": true,
+                    "StationName": "AWP181604",
+                    "TxRefAmp": 286.722
+                },
+                "size": 5010963,
+                "zip_member_count": null,
+                "version": 1,
+                "file_id": "64beb94d1ed6499d791cc206",
+                "origin": {
+                    "type": "job",
+                    "id": "64beb82522539ce3f11ccb65"
+                }
+            },
+            "location": {
+                "path": "/flywheel/v0/input/sag/9_t2_tse_sag.nii.gz",
+                "name": "9_t2_tse_sag.nii.gz"
+            },
+            "base": "file"
+        },
+        "api-key": {
+            "base": "api-key",
+            "key": "bmgf.flywheel.io:djEW9JMDwVWRO_HlLSA2lTPeUWflvySik6xFYaKnvi02dg-piswlOlsQg"
+        }
+    },
+    "destination": {
+        "id": "64d65814a9c8eea18d857e6c",
+        "type": "analysis"
+    }
+}

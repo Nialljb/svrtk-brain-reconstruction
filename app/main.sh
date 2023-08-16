@@ -85,7 +85,7 @@ fi
 ##############################################################################
 # Handle Exit status
 
-if [[ $mri_svrtk_exit_status == 0 ]]; then
+if [[ $mri_svrtk_exit_status == 0 ]] && [[ "$(ls -A $OUTPUT_DIR)" ]]; then
   echo -e "${CONTAINER} Success!"
   exit 0
 else
